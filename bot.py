@@ -163,7 +163,7 @@ async def check_and_create_tables():
 
 @bot.event
 async def on_ready():
-    print(f"\n✅ Logged in as {bot.user}")
+    print(f"✅ Logged in as {bot.user}")
     print("🔄 Initializing Canvas check...")
     await check_and_create_tables()
     check_canvas.start()
@@ -171,7 +171,7 @@ async def on_ready():
 
 async def main():
     async with bot:
-        await bot.start(DISCORD_TOKEN)
+        await bot.start(DISCORD_TOKEN, log_handler=None)
 
 
 asyncio.run(main())
